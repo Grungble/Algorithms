@@ -7,7 +7,5 @@ for i in list:
 
      #sorted.append(i)
      if iteration < i:
-        iteration = i
-     if iteration == i: 
-         print(i)
-         time.sleep(2)
+        iteration = i 
+print(i)
