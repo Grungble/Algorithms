@@ -3,10 +3,8 @@ unsorted_list  = [9,7,11,3,2,12,13]
 sorted_list = []
 iteration = 0
 num = 0
-limiter = True
-if len(unsorted_list) >20 :
-    limiter = False
-while (limiter):
+  
+while True:
     iteration = 0
     for x in unsorted_list:
         if iteration < x:
