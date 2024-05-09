@@ -13,10 +13,13 @@ while True:
     if iteration >= all(unsorted_list): 
         print(iteration)
         sorted_list.append(iteration)
-        unsorted_list.remove(iteration)
+        unsorted_list.pop(iteration)
         print(sorted_list)
         print(unsorted_list)
     time.sleep(1)
+    if unsorted_list == 0:
+        break
     #sorted_list.append(iteration)
     #list.remove(i)
     # print(sorted_list)
+print("list sorted", sorted_list)
