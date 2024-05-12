@@ -9,6 +9,8 @@ husband_diction = {} #each wive's husband rankings
 Wife_Diction = {}
 match_diction = {}
 temp_dic = {}
+h_rank = 0
+w_rank = 0
 
 for i in range(Num_people):#generates the lists to be shuffled
     Wives_list.append(f'w{i+1}')
@@ -28,12 +30,30 @@ for h_key, h_value in (husband_diction.items()):
             if not w_key in match_diction.values():
                 match_diction.update({h_key:w_key})
         # del (h_key, w_key)
-for wife, husband in (match_diction.items()):
+for wife, husband in (match_diction.items()):#grabs pair 
+    #wife is key:husband is value
     temp_h = husband_diction.get(wife)#grabs rankings of husbands
     temp_w = Wife_Diction.get(husband)#grabs rankings of wifes
     #print(temp_w)
-    print(temp_h.index(husband))
-
+    if temp_h.index(husband)> 0: #checks wife ranks husband bellow #0
+        h_rank = temp_h.index(husband)#what husband is ranked
+        def cheat_checker(p_cheater,check_a,rankings):
+            #c_part is the current partner
+            #p_cheater is who is currently being checked against the first partner
+            #check_a is who is getting checked against
+            c_part = match_diction.get(p_cheater)
+            if rankings.index(c_part)> c_part: 
+                print("hello")
+            
+            
+        for en,i in enumerate(temp_h):#checks who is ranked higher than husband
+            #i is the husband currently being checked
+            if en>= h_rank:#prevents iterations beyond current husband
+                print("hello")
+                break
+            if cheat_checker() == True:
+                print()
+    print(wife,"ranks",husband,temp_h.index(husband))
     if temp_h.index(husband) <1: #check husband rank
         print(wife, "will not cheat on", husband)
     if temp_w.index(wife) < 1:
