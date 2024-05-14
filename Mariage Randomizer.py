@@ -11,7 +11,6 @@ match_diction = {}
 temp_dic = {}
 h_rank = 0
 w_rank = 0
-
 for i in range(Num_people):#generates the lists to be shuffled
     Wives_list.append(f'w{i+1}')
     husbands_list.append(f'h{i+1}')
@@ -24,6 +23,18 @@ for en, i in enumerate(range(Num_people)):
     husband_diction.update({f'w{en+1}':husbands_ranking})#add wives ranking of husband to dictionary
 #pair people together
 #itterates wives list and husband rankings
+def w_cheat_checker(p_cheater,checked,rankings,gender_list,checked_p):
+            #c_part is the current partner
+            #p_cheater is who is currently being checked against the first partner
+            #check_a is who is getting checked against
+            c_part = match_diction.get(p_cheater)
+            list_1 = gender_list.get(p_cheater)
+            nil = list_1.index(c_part)
+            for i in nil:
+                if rankings.index(c_part)> c_part: 
+                    print("hello")
+
+
 for h_key, h_value in (husband_diction.items()):
     if not h_key in match_diction.keys():
         for w_key,w_value in (Wife_Diction.items()):
@@ -37,13 +48,7 @@ for wife, husband in (match_diction.items()):#grabs pair
     #print(temp_w)
     if temp_h.index(husband)> 0: #checks wife ranks husband bellow #0
         h_rank = temp_h.index(husband)#what husband is ranked
-        def cheat_checker(p_cheater,check_a,rankings):
-            #c_part is the current partner
-            #p_cheater is who is currently being checked against the first partner
-            #check_a is who is getting checked against
-            c_part = match_diction.get(p_cheater)
-            if rankings.index(c_part)> c_part: 
-                print("hello")
+        
             
             
         for en,i in enumerate(temp_h):#checks who is ranked higher than husband
@@ -51,8 +56,8 @@ for wife, husband in (match_diction.items()):#grabs pair
             if en>= h_rank:#prevents iterations beyond current husband
                 print("hello")
                 break
-            if cheat_checker() == True:
-                print()
+            # if w_cheat_checker() == True:
+            #     print("hello")
     print(wife,"ranks",husband,temp_h.index(husband))
     if temp_h.index(husband) <1: #check husband rank
         print(wife, "will not cheat on", husband)
