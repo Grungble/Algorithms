@@ -1,19 +1,19 @@
 import random
 import math
-max_range = 100
+max_range = 99
 min_range = 0
-final_num = random.randint(1, max_range)
 lower_range = 0
 guess = 0
-print("this is the random num", final_num)
-lister = []
+lister = [1,3,5,7,8,9]
 list_size = 50
 #generates then sorts an ordered list
-for i in range(lower_range, max_range):
-    lister.append(i)
-    lister.sort()
-
+# for i in range(lower_range, max_range):
+#     lister.append(i)
+#     lister.sort()
+print("list length", len(lister))
 to_find = random.choice(lister)
+#to_find = random.choice(lister)
+print("list",lister)
 print("value to find",to_find)
 #print(lister)
 def bin_search(list, value):
@@ -22,14 +22,15 @@ def bin_search(list, value):
     max_tries = 1 + math.floor(math.log2(maxdex))
     counter = 0
     while counter < max_tries:
-        guess = (mindex + maxdex)//2
-        print(maxdex, guess, mindex)
+        middex = (mindex + maxdex)//2
+        print(maxdex, middex, mindex)
+        guess = list[middex]
         if guess == value:
-            return guess
+            return middex
         if guess > value:
-            maxdex = guess
+            maxdex = middex
         else:
-            mindex = guess
+            mindex = middex
         counter +=1
 print(bin_search(lister,to_find))
 
