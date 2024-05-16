@@ -15,7 +15,7 @@ def searcher(find_in:list,to_find:int,min_ind:int,max_ind:int):
     else:
         min_ind = middex  
     if max_ind <= min_ind+1:
-        print("guess",guess)
+        #print("guess",guess)
         return max_ind
     return searcher(find_in,to_find,min_ind,max_ind)
 if __name__ == '__main__':
