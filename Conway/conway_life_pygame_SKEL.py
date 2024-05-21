@@ -187,7 +187,7 @@ start main code
 """
 if __name__ == '__main__':
   SLEEP_TIME_IN_MS = 500
-  DATA_FILENAME = 'conway_map.csv'
+  DATA_FILENAME = 'conway_life_map.csv'
 
   # init grid and neighbors
   life_grid = read_grid_from_csv(DATA_FILENAME)
