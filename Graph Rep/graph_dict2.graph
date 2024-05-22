@@ -1,0 +1,14 @@
+# graph_dict2.graph
+# Graph mapping for Example 2 
+# 5/22/2024 ek
+A:BFJ
+B:AEC
+C:BED
+D:C
+E:BC
+F:AG
+G:FHI
+H:GI
+I:GH
+J:AK
+K:J

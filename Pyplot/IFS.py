@@ -8,8 +8,8 @@ if __name__ == '__main__':
     plt.axhline( y=-1, color='red', linestyle='--' )
     plt.ylim(-2,2)
 
-    x0 = .5
-    iterations = 50 
+    x0 = 1.61803399
+    iterations = 20
     val_list = []
     iter_list = [i for i in range(iterations)]
 
