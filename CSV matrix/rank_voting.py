@@ -71,7 +71,7 @@ if __name__ == '__main__':
     VOTE_RANK_GRAPH = 'vote_rank_3.csv'
     counter = 0
     track = 1
-    max_lim = 25
+    max_lim = 20
     iterations = [i for i in range(max_lim)]
     read_graph_file(VOTE_RANK_GRAPH, graph_dict)
     #print(graph_dict)
@@ -82,7 +82,11 @@ if __name__ == '__main__':
     reputation = [1 for _ in  range(len(trasn_matrix[0]))]
     rank_change = calc_vote(trasn_matrix,reputation,counter, max_lim)
     print(iterations)
-    plt.plot(iterations,rank_change)
-    #plt.legend(Loc='lower right',fontsize=7)
+    component_list = list(zip(*rank_change))
+    num_components = len(component_list)
+    for i in range(num_components):
+        vector_change_list = component_list[i]
+        plt.plot(iterations, vector_change_list, label = f'{key_list[i]}')
+    plt.legend(loc='lower right',fontsize=7)
     plt.show()
    
