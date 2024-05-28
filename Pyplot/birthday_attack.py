@@ -3,14 +3,15 @@ import random
 import math 
 from matplotlib import pyplot as plt
 iters = 300
-max_length = 2**16
-
+max_length = 2**64
+iteration_list  = []
+overlap_pct = []
 
 
 for i in range(max_length):
     counter = 0
-    i = 1000*i
-    i += 10000
+    i = 100*i
+    #i += 10000
     for k in range(iters):
         birthday_set = set()
         for l in range(i+1):
@@ -21,10 +22,13 @@ for i in range(max_length):
             else:
                 birthday_set.add(birthday_num)
     if i%100 == 0:
-        plt.plot(i,(counter//iters)*100)
+        iteration_list.append(i)
+        overlap_pct.append((counter/iters)*100)
         print(f'with {i} values you have a {(counter/iters)*100}% chance of overlap')
+        if (counter//iters)*100 == 100:
+            break
+print(f'iterations:{iteration_list}')
+print()
+print(f'overlap: {overlap_pct}')
+plt.plot(iteration_list,overlap_pct)
 plt.show()
-        
-
-        
-
