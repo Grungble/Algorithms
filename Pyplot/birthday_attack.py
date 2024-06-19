@@ -1,9 +1,8 @@
 
 import random 
-import math 
 from matplotlib import pyplot as plt
-iters = 300
-max_length = 2**64
+iters = 10000
+max_length = 2**160
 iteration_list  = []
 overlap_pct = []
 
